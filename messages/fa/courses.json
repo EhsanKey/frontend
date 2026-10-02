@@ -1,0 +1,70 @@
+{
+  "title": "مدیریت دروس دانشگاهی",
+  "description": "فهرست دروس، کد درس، تعداد واحد و قابلیت ادغام کدهای درسی مشابه یا تکراری.",
+  "meta": {
+    "title": "مدیریت دروس"
+  },
+  "filters": {
+    "search": "جستجوی نام درس...",
+    "department": "دانشکده"
+  },
+  "table": {
+    "name": "عنوان درس",
+    "code": "کد درس",
+    "units": "تعداد واحد",
+    "department": "دانشکده / گروه آموزشی",
+    "university": "نام دانشگاه",
+    "description": "توضیحات",
+    "createdAt": "تاریخ ثبت",
+    "actions": "عملیات"
+  },
+  "stats": {
+    "teachings": "{count} استاد",
+    "reviews": "{count} نظر",
+    "resources": "{count} جزوه"
+  },
+  "actions": {
+    "create": "ثبت درس جدید",
+    "edit": "ویرایش درس",
+    "merge": "ادغام با درس دیگر",
+    "delete": "حذف"
+  },
+  "modals": {
+    "createTitle": "افزودن درس جدید",
+    "editTitle": "ویرایش اطلاعات درس",
+    "deleteTitle": "حذف درس",
+    "deleteConfirm": "آیا از حذف این درس اطمینان دارید؟",
+    "mergeTitle": "ادغام دروس تکراری (Merge)",
+    "mergeDescription": "تمامی تدریس‌ها، نظرات و فایل‌های این درس به درس مقصد منتقل شده و این رکورد حذف خواهد شد.",
+    "mergeSourceLabel": "درس مبدا (در حال حذف):",
+    "mergeTargetLabel": "درس مقصد (رکورد اصلی و معتبر):",
+    "mergeSelectPlaceholder": "انتخاب درس مقصد...",
+    "mergeConfirmButton": "تایید و اجرای ادغام",
+    "professorsCount": "{count} استاد",
+    "reviewsCount": "{count} نظر",
+    "resourcesCount": "{count} جزوه"
+  },
+  "fields": {
+    "name": "نام درس",
+    "namePlaceholder": "مثال: ساختمان داده‌ها و الگوریتم‌ها",
+    "code": "کد درس",
+    "codePlaceholder": "مثال: CE203",
+    "units": "تعداد واحد",
+    "unitsPlaceholder": "۳",
+    "department": "دانشکده / گروه آموزشی",
+    "departmentPlaceholder": "مثال: مهندسی کامپیوتر",
+    "universityName": "نام دانشگاه",
+    "universityPlaceholder": "مثال: دانشگاه صنعتی شریف",
+    "description": "توضیحات",
+    "descriptionPlaceholder": "توضیحات تکمیلی پیرامون سرفصل یا مشخصات درس..."
+  },
+  "validation": {
+    "nameRequired": "نام درس الزامی است"
+  },
+  "toast": {
+    "created": "درس جدید با موفقیت ثبت شد.",
+    "updated": "اطلاعات درس بروزرسانی شد.",
+    "deleted": "درس حذف شد.",
+    "merged": "ادغام درس‌ها با موفقیت انجام شد."
+  }
+}

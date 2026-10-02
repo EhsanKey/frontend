@@ -1,0 +1,31 @@
+
+import { Toast } from '@heroui/react';
+import { LucideProvider } from 'lucide-react';
+import { DEFAULT_ICON_SIZE, DEFAULT_ICON_STROKE_WIDTH } from '@/constants';
+import IntlProvider from './intl-provider';
+import ReactQueryProvider from './react-query-provider';
+import ThemeProvider from './theme-provider';
+
+const AppProviders: FCC = ({ children }) => {
+  return (
+    <ThemeProvider>
+      <IntlProvider>
+        <ReactQueryProvider>
+          <LucideProvider
+            size={DEFAULT_ICON_SIZE}
+            strokeWidth={DEFAULT_ICON_STROKE_WIDTH}
+          >
+            <Toast.Provider
+              maxVisibleToasts={3}
+              placement="top start"
+              className="rtl z-100 text-right [direction:rtl]"
+            />
+            {children}
+          </LucideProvider>
+        </ReactQueryProvider>
+      </IntlProvider>
+    </ThemeProvider>
+  );
+};
+
+export default AppProviders;

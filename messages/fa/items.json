@@ -1,0 +1,64 @@
+{
+  "title": "مدیریت آیتم‌ها",
+  "description": "لیست رکوردهای ثبت‌شده به همراه فیلتر، جستجو و امکان ویرایش و حذف.",
+  "columns": {
+    "id": "شناسه",
+    "title": "عنوان",
+    "category": "دسته‌بندی",
+    "status": "وضعیت",
+    "createdAt": "تاریخ ثبت",
+    "actions": "عملیات"
+  },
+  "filters": {
+    "search": "جستجوی عنوان...",
+    "category": "دسته‌بندی",
+    "status": "وضعیت",
+    "allCategories": "همه دسته‌ها",
+    "reset": "پاک کردن فیلترها"
+  },
+  "modal": {
+    "createTitle": "افزودن رکورد جدید",
+    "editTitle": "ویرایش رکورد",
+    "deleteTitle": "تایید حذف رکورد",
+    "deleteConfirm": "آیا از حذف این رکورد اطمینان دارید؟ این عملیات قابل بازگشت نیست."
+  },
+  "fields": {
+    "title": {
+      "label": "عنوان رکورد",
+      "placeholder": "مثال: گزارش مالی ماهانه"
+    },
+    "category": {
+      "label": "دسته‌بندی",
+      "placeholder": "یک دسته‌بندی انتخاب کنید"
+    },
+    "status": {
+      "label": "وضعیت",
+      "placeholder": "انتخاب وضعیت"
+    },
+    "description": {
+      "label": "توضیحات تکمیلی",
+      "placeholder": "توضیحات اختیاری درباره این رکورد..."
+    }
+  },
+  "detail": {
+    "title": "جزئیات رکورد",
+    "recordId": "شناسه رکورد: #{id}",
+    "category": "دسته‌بندی",
+    "createdAt": "تاریخ ایجاد",
+    "creator": "ایجادکننده",
+    "system": "سیستم",
+    "description": "توضیحات",
+    "noDescription": "توضیحاتی برای این رکورد ثبت نشده است."
+  },
+  "validation": {
+    "titleRequired": "وارد کردن عنوان (حداقل ۲ کاراکتر) الزامی است.",
+    "categoryRequired": "انتخاب دسته‌بندی الزامی است.",
+    "statusRequired": "انتخاب وضعیت الزامی است."
+  },
+  "categories": {
+    "general": "عمومی",
+    "technical": "فنی",
+    "financial": "مالی",
+    "administrative": "اداری"
+  }
+}

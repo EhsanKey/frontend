@@ -1,0 +1,96 @@
+{
+  "title": "منابع در انتظار بررسی",
+  "description": "بررسی، تایید و انتشار جزوات دست‌نویس، اسلایدها و نمونه سوالات امتحانی دانشجویان در کانال تلگرام.",
+  "meta": {
+    "title": "منابع در انتظار بررسی"
+  },
+  "filters": {
+    "search": "جستجو در عنوان، نام استاد یا درس...",
+    "status": "وضعیت انتشار",
+    "kind": "نوع منبع",
+    "all": "همه موارد",
+    "pending": "در انتظار بررسی",
+    "approved": "تایید و منتشر شده",
+    "rejected": "رد شده",
+    "lecture_note": "جزوه / اسلاید",
+    "exam_sample": "نمونه سوال امتحانی"
+  },
+  "table": {
+    "title": "عنوان منبع",
+    "kind": "نوع منبع",
+    "academic": "دانشگاه و رشته",
+    "professor": "استاد مربوطه",
+    "course": "درس مربوطه",
+    "professorCourse": "استاد و درس مربوطه",
+    "files": "فایل‌های ضمیمه",
+    "status": "وضعیت",
+    "createdAt": "تاریخ ارسال",
+    "actions": "عملیات",
+    "publishedInChannel": "منتشر شده در کانال",
+    "rejectionReason": "علت رد: {reason}",
+    "newProfessor": "استاد جدید",
+    "newCourse": "درس جدید",
+    "studentPrefix": "ارسال: {name}",
+    "ariaLabel": "جدول منابع و جزوات ارسالی"
+  },
+  "actions": {
+    "approve": "تایید و انتشار در کانال",
+    "reject": "رد فایل",
+    "edit": "ویرایش عنوان و مشخصات",
+    "delete": "حذف",
+    "download": "دریافت فایل"
+  },
+  "modals": {
+    "approveTitle": "تایید و انتشار در کانال تلگرام",
+    "approveConfirm": "با تایید این منبع، فایل به صورت خودکار به همراه کپشن استاندارد در کانال منابع تلگرام منتشر شده و برای تمامی دانشجویان در دسترس خواهد بود.",
+    "rejectTitle": "رد منبع ارسالی",
+    "rejectReason": "دلیل رد منبع",
+    "rejectReasonPlaceholder": "مثال: کیفیت نامناسب اسکن، تکراری بودن، عدم وضوح متن و...",
+    "rejectConfirmPrompt": "آیا از رد منبع «{title}» اطمینان دارید؟",
+    "editTitle": "ویرایش مشخصات منبع درسی ارسالی",
+    "deleteTitle": "حذف منبع",
+    "deleteConfirm": "آیا از حذف این منبع اطمینان دارید؟"
+  },
+  "edit": {
+    "title": "ویرایش و بررسی منبع درسی ارسالی",
+    "resourceId": "شناسه منبع: #{id}",
+    "studentSender": "ارسال‌کننده منبع",
+    "submissionDate": "تاریخ ارسال",
+    "currentStatus": "وضعیت فعلی",
+    "initialUniversity": "دانشگاه اولیه",
+    "unknownUniversity": "دانشگاه نامشخص",
+    "studentFallback": "دانشجو",
+    "attachedFiles": "فایل‌های ضمیمه شده",
+    "previousRejectionReason": "علت رد قبلی:",
+    "confirmRejectTitle": "رد قطعی منبع",
+    "rejectPrompt": "لطفاً علت رد این منبع آموزشی را مشخص فرمایید:",
+    "resourceTitle": "عنوان منبع درسی",
+    "resourceTitlePlaceholder": "مثال: جزوه کامل ریاضی عمومی ۱",
+    "kind": "نوع منبع",
+    "lectureNote": "جزوه / اسلاید",
+    "examSample": "نمونه سوال امتحانی",
+    "academicSection": "ساختار دانشگاهی و حوزه تدریس",
+    "professorSectionTitle": "مشخصات استاد",
+    "isProfessorNew": "استاد جدید است",
+    "newProfessorName": "نام و نام خانوادگی استاد جدید",
+    "newProfessorPlaceholder": "نام استاد را تایپ کنید...",
+    "existingProfessor": "انتخاب از اساتید موجود",
+    "courseSectionTitle": "مشخصات درس",
+    "isCourseNew": "درس جدید است",
+    "newCourseName": "عنوان درس جدید",
+    "newCoursePlaceholder": "عنوان درس را تایپ کنید...",
+    "existingCourse": "انتخاب از دروس موجود",
+    "validation": {
+      "titleRequired": "عنوان منبع الزامی است",
+      "rejectReasonRequired": "ذکر دلیل رد الزامی است",
+      "newProfessorRequired": "نام استاد جدید الزامی است",
+      "newCourseRequired": "عنوان درس جدید الزامی است"
+    }
+  },
+  "toast": {
+    "approved": "منبع با موفقیت تایید و در کانال تلگرام منتشر گردید.",
+    "rejected": "منبع رد شد.",
+    "updated": "مشخصات منبع با موفقیت ذخیره شد.",
+    "deleted": "منبع حذف شد."
+  }
+}

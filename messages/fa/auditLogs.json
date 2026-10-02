@@ -1,0 +1,72 @@
+{
+  "title": "سابقه تغییرات و وقایع سیستم",
+  "description": "گزارش جامع تمام رویدادها، تغییرات اطلاعات، اقدامات کاربران و لاگ‌های امنیتی سامانه",
+  "columns": {
+    "id": "شناسه",
+    "timestamp": "زمان رویداد",
+    "actor": "کاربر عامل",
+    "domain": "دامنه / ماژول",
+    "action": "نوع عملیات",
+    "entity": "موجودیت هدف",
+    "ip": "آدرس IP",
+    "actions": "جزئیات"
+  },
+  "filters": {
+    "search": "جستجو در توضیحات، کاربر، شناسه یا ماژول...",
+    "domain": "فیلتر بر اساس دامنه",
+    "action": "نوع عملیات",
+    "allDomains": "تمام دامنه‌ها",
+    "allActions": "تمام عملیات‌ها",
+    "reset": "پاک‌سازی فیلترها"
+  },
+  "domains": {
+    "teachings": "تدریس‌ها",
+    "professors": "اساتید",
+    "courses": "دروس",
+    "campuses": "پردیس‌ها / واحدها",
+    "universities": "دانشگاه‌ها",
+    "majors": "رشته‌ها",
+    "reviews": "نظرات",
+    "resources": "منابع",
+    "users": "کاربران",
+    "auth": "احراز هویت",
+    "system": "سیستم"
+  },
+  "actions": {
+    "CREATE": "ایجاد",
+    "UPDATE": "ویرایش",
+    "DELETE": "حذف",
+    "MERGE": "ادغام",
+    "LOGIN": "ورود",
+    "APPROVE": "تایید",
+    "REJECT": "رد",
+    "INVALIDATE": "ابطال کش"
+  },
+  "modal": {
+    "title": "جزئیات رویداد و تغییرات ثبت‌شده",
+    "generalInfo": "مشخصات کلی رویداد",
+    "eventTime": "زمان ثبت رویداد",
+    "actorInfo": "مشخصات عامل رویداد",
+    "targetEntity": "موجودیت هدف",
+    "networkInfo": "اطلاعات شبکه و کلاینت",
+    "ipAddress": "آدرس IP",
+    "userAgent": "مرورگر و سیستم‌عامل (User Agent)",
+    "changesTitle": "مقایسه مقادیر قبل و بعد از تغییر (Diff)",
+    "noChanges": "هیچ تغییر مقداری برای این رویداد ذخیره نشده است.",
+    "field": "فیلد",
+    "before": "مقدار قبلی",
+    "after": "مقدار جدید",
+    "metadata": "متاداده تکمیلی (JSON)",
+    "close": "بستن",
+    "nullValue": "خالی (null)",
+    "trueValue": "بله (true)",
+    "falseValue": "خیر (false)",
+    "entityLabel": "موجودیت: {type}",
+    "adminUser": "کاربر ادمین:",
+    "systemUser": "سیستم",
+    "adminId": "شناسه ادمین:",
+    "entityTypeLabel": "نوع موجودیت:",
+    "recordId": "شناسه رکورد:",
+    "recordedValue": "مقدار ثبت‌شده"
+  }
+}

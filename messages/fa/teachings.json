@@ -1,0 +1,69 @@
+{
+  "title": "مدیریت تدریس‌ها",
+  "description": "مدیریت ارائه دروس توسط اساتید در واحدها، دانشکده‌ها و مقاطع تحصیلی مختلف.",
+  "meta": {
+    "title": "تدریس‌ها"
+  },
+  "filters": {
+    "search": "جستجو در نام استاد، درس، واحد یا رشته...",
+    "professor": "فیلتر بر اساس استاد",
+    "allProfessors": "همه اساتید",
+    "course": "فیلتر بر اساس درس",
+    "allCourses": "همه دروس",
+    "degreeLevel": "مقطع تحصیلی",
+    "allDegrees": "همه مقاطع"
+  },
+  "table": {
+    "professor": "استاد",
+    "course": "درس",
+    "university": "دانشگاه / واحد",
+    "major": "رشته تحصیلی",
+    "degreeLevel": "مقطع",
+    "semester": "نیم‌سال",
+    "actions": "عملیات"
+  },
+  "fields": {
+    "professor": "استاد",
+    "professorPlaceholder": "استاد را انتخاب کنید",
+    "course": "درس",
+    "coursePlaceholder": "درس را انتخاب کنید",
+    "campus": "واحد / دانشکده",
+    "campusPlaceholder": "واحد یا دانشکده را انتخاب کنید",
+    "major": "رشته تحصیلی",
+    "majorPlaceholder": "رشته تحصیلی را انتخاب کنید",
+    "degreeLevel": "مقطع تحصیلی",
+    "degreeLevelPlaceholder": "مقطع تحصیلی را انتخاب کنید",
+    "semester": "نیم‌سال تحصیلی",
+    "semesterPlaceholder": "مثال: نیم‌سال اول ۱۴۰۴-۱۴۰۵"
+  },
+  "degrees": {
+    "associate": "کاردانی",
+    "bachelor": "کارشناسی",
+    "master": "کارشناسی ارشد",
+    "doctorate": "دکتری",
+    "unknown": "نامشخص"
+  },
+  "validation": {
+    "professorRequired": "انتخاب استاد الزامی است",
+    "courseRequired": "انتخاب درس الزامی است",
+    "campusRequired": "انتخاب واحد یا دانشکده الزامی است",
+    "majorRequired": "انتخاب رشته تحصیلی الزامی است",
+    "degreeRequired": "انتخاب مقطع تحصیلی الزامی است"
+  },
+  "actions": {
+    "create": "ثبت تدریس جدید",
+    "edit": "ویرایش",
+    "delete": "حذف"
+  },
+  "modals": {
+    "createTitle": "ثبت تدریس جدید",
+    "editTitle": "ویرایش تدریس",
+    "deleteTitle": "حذف تدریس",
+    "deleteConfirm": "آیا از حذف این رکورد تدریس اطمینان دارید؟ با حذف تدریس، نظرات و منابع متصل به آن تحت تاثیر قرار می‌گیرند."
+  },
+  "toast": {
+    "created": "رکورد تدریس جدید با موفقیت ایجاد شد.",
+    "updated": "مشخصات تدریس با موفقیت بروزرسانی شد.",
+    "deleted": "تدریس با موفقیت حذف گردید."
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "title": "نظرات در انتظار بررسی",
+  "description": "مدیریت و بررسی نظرات ارسالی دانشجویان درباره اساتید و دروس. تایید بازخورد به صورت خودکار کش پاسخ‌های هوش مصنوعی را به‌روز می‌کند.",
+  "meta": {
+    "title": "نظرات در انتظار بررسی"
+  },
+  "filters": {
+    "search": "جستجو در متن نظر، نام استاد یا درس...",
+    "status": "وضعیت بازخورد",
+    "all": "همه وضعیت‌ها",
+    "pending": "در انتظار بررسی",
+    "approved": "تایید شده",
+    "rejected": "رد شده"
+  },
+  "table": {
+    "academic": "دانشگاه و رشته",
+    "professor": "استاد",
+    "course": "درس و مقطع",
+    "degree": "مقطع",
+    "semester": "نیمسال تحصیلی",
+    "content": "متن نظر دانشجو",
+    "status": "وضعیت",
+    "createdAt": "تاریخ ثبت",
+    "actions": "عملیات",
+    "newProfessor": "استاد جدید",
+    "newCourse": "درس جدید",
+    "studentPrefix": "دانشجو: {name}",
+    "rejectionReason": "علت رد: {reason}",
+    "ariaLabel": "جدول بازخوردهای دانشجویان"
+  },
+  "actions": {
+    "approve": "تایید و انتشار",
+    "reject": "رد بازخورد",
+    "edit": "ویرایش جزئیات",
+    "delete": "حذف",
+    "viewDetails": "مشاهده کامل"
+  },
+  "modals": {
+    "approveTitle": "تایید و انتشار بازخورد",
+    "approveConfirm": "آیا از تایید این بازخورد اطمینان دارید؟ با تایید این نظر، کش پاسخ‌های هوش مصنوعی مربوط به این استاد به صورت خودکار ابطال و به‌روز خواهد شد.",
+    "rejectTitle": "رد بازخورد دانشجو",
+    "rejectReason": "دلیل رد بازخورد",
+    "rejectReasonPlaceholder": "علت رد نظر (مثلاً: الفاظ نامناسب، عدم انطباق با موضوع و...)",
+    "rejectConfirmPrompt": "آیا از رد بازخورد ثبت‌شده برای {name} اطمینان دارید؟ لطفاً علت رد را مشخص نمایید.",
+    "editTitle": "ویرایش و بررسی بازخورد دانشجو",
+    "deleteTitle": "حذف بازخورد",
+    "deleteConfirm": "آیا از حذف این بازخورد اطمینان دارید؟ این عملیات قابل بازگشت نیست."
+  },
+  "edit": {
+    "title": "ویرایش و بررسی بازخورد دانشجو",
+    "reviewId": "شناسه بازخورد: #{id}",
+    "studentSender": "دانشجوی ارسال‌کننده",
+    "submissionDate": "تاریخ ارسال",
+    "currentStatus": "وضعیت فعلی",
+    "initialUniversity": "دانشگاه اولیه",
+    "unknownUniversity": "دانشگاه نامشخص",
+    "studentFallback": "دانشجو",
+    "academicSectionTitle": "۱. ساختار دانشگاهی، دانشکده و رشته",
+    "academicSectionDesc": "تعیین دقیق مرجع آکادمیک برای دسته‌بندی و دسترسی دانشجویان",
+    "courseLevelSectionTitle": "۲. مقطع و نوع درس",
+    "semesterSectionTitle": "۳. نیمسال تحصیلی",
+    "semesterLabel": "نیمسال تحصیلی ثبت نظر",
+    "selectSemesterPlaceholder": "انتخاب نیمسال تحصیلی...",
+    "professorSectionTitle": "مشخصات استاد",
+    "isProfessorNew": "استاد جدید است",
+    "newProfessorName": "نام و نام خانوادگی استاد جدید",
+    "newProfessorPlaceholder": "نام استاد را تایپ کنید...",
+    "existingProfessor": "انتخاب از اساتید موجود",
+    "courseSectionTitle": "مشخصات درس",
+    "isCourseNew": "درس جدید است",
+    "newCourseName": "عنوان درس جدید",
+    "newCoursePlaceholder": "عنوان درس را تایپ کنید...",
+    "existingCourse": "انتخاب از دروس موجود",
+    "reviewContent": "متن بازخورد و نظر دانشجو",
+    "reviewContentPlaceholder": "متن نظر دانشجو را ویرایش یا تایید کنید...",
+    "previousRejectionReason": "علت رد قبلی:",
+    "confirmRejectTitle": "رد قطعی نظر",
+    "rejectPrompt": "لطفاً علت رد این بازخورد را برای ثبت در سوابق مشخص کنید:",
+    "validation": {
+      "contentRequired": "متن بازخورد و نظر دانشجو نمی‌تواند خالی باشد",
+      "newProfessorRequired": "نام استاد جدید الزامی است",
+      "newCourseRequired": "عنوان درس جدید الزامی است",
+      "rejectReasonRequired": "ذکر دلیل رد الزامی است"
+    }
+  },
+  "toast": {
+    "approved": "بازخورد با موفقیت تایید شد و کش هوش مصنوعی بازنشانی گردید.",
+    "rejected": "بازخورد رد شد.",
+    "updated": "مشخصات بازخورد با موفقیت بروزرسانی شد.",
+    "deleted": "بازخورد حذف شد."
+  }
+}

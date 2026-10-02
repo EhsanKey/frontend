@@ -1,0 +1,202 @@
+@layer base {
+  :root,
+  .light,
+  [data-theme='light'] {
+    color-scheme: light;
+
+    --background: var(--ds-background);
+    --foreground: var(--ds-text-primary);
+
+    --surface: var(--ds-surface);
+    --surface-foreground: var(--ds-text-primary);
+
+    --surface-secondary: var(--ds-surface-secondary);
+    --surface-secondary-foreground: var(--ds-text-secondary);
+
+    --surface-tertiary: var(--ds-surface-tertiary);
+    --surface-tertiary-foreground: var(--ds-text-secondary);
+
+    --overlay: var(--ds-surface);
+    --overlay-foreground: var(--ds-text-primary);
+
+    --muted: var(--ds-text-tertiary);
+
+    --default: var(--color-neutral-100);
+    --default-foreground: var(--ds-text-primary);
+
+    --accent: var(--color-primary-500);
+    --accent-foreground: var(--ds-text-inverse);
+
+    --accent-hover: var(--color-primary-600);
+
+    --accent-soft: var(--color-primary-50);
+    --accent-soft-foreground: var(--color-primary-500);
+    --accent-soft-hover: var(--color-primary-100);
+
+    --success: var(--color-success-500);
+    --success-foreground: var(--ds-text-primary);
+
+    --success-hover: var(--color-success-600);
+
+    --success-soft: var(--color-success-50);
+    --success-soft-foreground: var(--color-success-700);
+    --success-soft-hover: var(--color-success-100);
+
+    --warning: var(--color-warning-500);
+    --warning-foreground: var(--ds-text-primary);
+
+    --warning-hover: var(--color-warning-600);
+
+    --warning-soft: var(--color-warning-50);
+    --warning-soft-foreground: var(--color-warning-700);
+    --warning-soft-hover: var(--color-warning-100);
+
+    --danger: var(--color-danger-500);
+    --danger-foreground: var(--ds-text-inverse);
+
+    --danger-hover: var(--color-danger-600);
+
+    --danger-soft: var(--color-danger-50);
+    --danger-soft-foreground: var(--color-danger-700);
+    --danger-soft-hover: var(--color-danger-100);
+
+    --info: var(--color-info-500);
+    --info-foreground: var(--ds-text-inverse);
+
+    --info-hover: var(--color-info-600);
+
+    --info-soft: var(--color-info-50);
+    --info-soft-foreground: var(--color-info-700);
+
+    --border: var(--ds-border-default);
+    --separator: var(--ds-divider);
+
+    --focus: var(--color-primary-500);
+
+    --border-width: 1px;
+    --ring-offset-width: 2px;
+
+    --field-background: var(--ds-surface);
+    --field-foreground: var(--ds-text-primary);
+    --field-placeholder: var(--color-neutral-400);
+
+    --field-border: var(--ds-border-default);
+    --field-border-width: 1px;
+
+    --field-radius: var(--ds-radius-md);
+
+    --radius: var(--ds-radius-md);
+
+    --segment: var(--ds-surface);
+    --segment-foreground: var(--ds-text-primary);
+
+    --surface-shadow: var(--ds-shadow-sm);
+    --overlay-shadow: var(--ds-shadow-lg);
+    --field-shadow: var(--ds-shadow-sm);
+
+    --disabled-opacity: 0.4;
+
+    --link: var(--color-primary-600);
+
+    --backdrop: var(--ds-overlay);
+  }
+
+  .dark,
+  [data-theme='dark'] {
+    color-scheme: dark;
+
+    --background: var(--ds-background);
+    --foreground: var(--ds-text-primary);
+
+    --surface: var(--ds-surface);
+    --surface-foreground: var(--ds-text-primary);
+
+    --surface-secondary: var(--ds-surface-secondary);
+    --surface-secondary-foreground: var(--ds-text-secondary);
+
+    --surface-tertiary: var(--ds-surface-tertiary);
+    --surface-tertiary-foreground: var(--ds-text-secondary);
+
+    --overlay: var(--ds-surface);
+    --overlay-foreground: var(--ds-text-primary);
+
+    --muted: var(--ds-text-tertiary);
+
+    --default: #1f293d;
+    --default-foreground: var(--ds-text-primary);
+
+    --accent: var(--color-primary-500);
+    --accent-foreground: #ffffff;
+    --accent-hover: var(--color-primary-400);
+
+    --accent-soft: rgba(37, 99, 235, 0.18);
+    --accent-soft-foreground: #93c5fd;
+    --accent-soft-hover: rgba(37, 99, 235, 0.28);
+
+    --success: var(--color-success-500);
+    --success-foreground: #ffffff;
+    --success-hover: var(--color-success-400);
+    --success-soft: rgba(16, 185, 129, 0.18);
+    --success-soft-foreground: #6ee7b7;
+    --success-soft-hover: rgba(16, 185, 129, 0.28);
+
+    --warning: var(--color-warning-500);
+    --warning-foreground: #ffffff;
+    --warning-hover: var(--color-warning-400);
+    --warning-soft: rgba(245, 158, 11, 0.18);
+    --warning-soft-foreground: #fcd34d;
+    --warning-soft-hover: rgba(245, 158, 11, 0.28);
+
+    --danger: var(--color-danger-500);
+    --danger-foreground: #ffffff;
+    --danger-hover: var(--color-danger-400);
+    --danger-soft: rgba(239, 68, 68, 0.18);
+    --danger-soft-foreground: #fca5a5;
+    --danger-soft-hover: rgba(239, 68, 68, 0.28);
+
+    --info: var(--color-info-500);
+    --info-foreground: #ffffff;
+    --info-hover: var(--color-info-400);
+    --info-soft: rgba(59, 130, 246, 0.18);
+    --info-soft-foreground: #93c5fd;
+
+    --border: var(--ds-border-default);
+    --separator: var(--ds-divider);
+
+    --focus: var(--color-primary-400);
+
+    --border-width: 1px;
+    --ring-offset-width: 2px;
+
+    --field-background: var(--ds-surface);
+    --field-foreground: var(--ds-text-primary);
+    --field-placeholder: var(--color-neutral-500);
+
+    --field-border: var(--ds-border-default);
+    --field-border-width: 1px;
+
+    --field-radius: var(--ds-radius-md);
+    --radius: var(--ds-radius-md);
+
+    --segment: var(--ds-surface-secondary);
+    --segment-foreground: var(--ds-text-primary);
+
+    --surface-shadow: var(--ds-shadow-sm);
+    --overlay-shadow: var(--ds-shadow-lg);
+    --field-shadow: var(--ds-shadow-sm);
+
+    --disabled-opacity: 0.35;
+
+    --link: var(--color-primary-400);
+
+    --backdrop: var(--ds-overlay);
+  }
+}
+
+@theme inline {
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-info-hover: var(--info-hover);
+  --color-info-soft: var(--info-soft);
+  --color-info-soft-foreground: var(--info-soft-foreground);
+}

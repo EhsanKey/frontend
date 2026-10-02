@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "title": {
+      "default": "سامانه دستیار دانشگاهی",
+      "template": "%s | سامانه دستیار دانشگاهی"
+    },
+    "description": "داشبورد جامع مدیریت بات و هوش مصنوعی دستیار دانشگاهی"
+  },
+  "nav": {
+    "dashboard": "داشبورد",
+    "reviews": "نظرات در انتظار بررسی",
+    "resources": "منابع در انتظار بررسی",
+    "crawlerChannels": "کانال‌های در حال خزش",
+    "crawlerReviews": "بررسی نظرات کانال‌ها",
+    "universities": "دانشگاه‌ها",
+    "campuses": "واحدها",
+    "majors": "رشته‌ها",
+    "professors": "اساتید",
+    "courses": "دروس",
+    "teachings": "تدریس‌ها",
+    "registeredReviews": "نظرات ثبت‌شده",
+    "inquiries": "پیگیری‌ها",
+    "errors": "پایش خطاها",
+    "telegram": "تلگرام",
+    "broadcasts": "ارسال پیام همگانی",
+    "aiModels": "مدل‌های هوش مصنوعی",
+    "ai-models": "مدل‌های هوش مصنوعی",
+    "cache": "حافظه و کش",
+    "botFlow": "معماری و فلوی پیام",
+    "bot-flow": "معماری و فلوی پیام",
+    "users": "کاربران",
+    "auditLogs": "سابقه تغییرات",
+    "audit-logs": "سابقه تغییرات",
+    "profile": "پروفایل",
+    "items": "آیتم‌ها"
+  },
+  "sections": {
+    "main": "عمومی",
+    "moderation": "تایید و بررسی",
+    "academic": "امور آموزشی",
+    "ai": "بات و هوش مصنوعی",
+    "system": "تنظیمات و دسترسی"
+  },
+  "header": {
+    "brandTitle": "دستیار دانشگاهی",
+    "brandSubtitle": "پنل مدیریت و پایش هوش مصنوعی",
+    "notifications": "اعلان‌ها",
+    "userMenu": "منوی کاربر",
+    "user": "کاربر",
+    "profile": "پروفایل کاربری",
+    "logout": "خروج از حساب",
+    "toggleSidebar": "تغییر وضعیت منوی کناری",
+    "mainNav": "منوی اصلی داشبورد",
+    "closeMenu": "بستن منو"
+  },
+  "roles": {
+    "ADMIN": "مدیر سیستم",
+    "USER": "کاربر عادی",
+    "super_admin": "مدیر ارشد",
+    "moderator": "ناظر محتوا"
+  },
+  "unauthorized": {
+    "title": "عدم دسترسی به این بخش",
+    "description": "شما مجوزهای لازم برای مشاهده این صفحه را ندارید. لطفاً با مدیر سیستم تماس بگیرید.",
+    "backToDashboard": "بازگشت به داشبورد"
+  }
+}

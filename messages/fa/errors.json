@@ -1,0 +1,58 @@
+{
+  "title": "پایش و مانیتورینگ خطاهای سیستم و هوش مصنوعی",
+  "description": "بررسی خطاهای ثبت‌شده در لایه برنامه‌ریز هوش مصنوعی (AI Planner)، تولید پاسخ (AI Answer)، تلگرام و پایگاه‌داده.",
+  "meta": {
+    "title": "پایش خطاهای سیستم"
+  },
+  "filters": {
+    "search": "جستجو در متن پیام یا خطای رخ داده...",
+    "source": "مبدا خطا",
+    "level": "سطح اهمیت",
+    "status": "وضعیت رسیدگی",
+    "all": "همه موارد",
+    "resolved": "رسیدگی‌شده",
+    "unresolved": "حل‌نشده / فعال"
+  },
+  "sources": {
+    "ai_planner": "برنامه‌ریز هوش مصنوعی (AI Planner)",
+    "ai_answer": "تولید پاسخ هوش مصنوعی (AI Answer)",
+    "database": "پایگاه‌داده (Database)",
+    "internal_tool": "ابزار داخلی (Internal Tool)",
+    "telegram": "بات تلگرام (Telegram)",
+    "system": "هسته سیستم (System)"
+  },
+  "levels": {
+    "fatal": "بحرانی (Fatal)",
+    "error": "خطا (Error)",
+    "warning": "هشدار (Warning)"
+  },
+  "statuses": {
+    "resolved": "حل‌شده",
+    "unresolved": "حل‌نشده"
+  },
+  "table": {
+    "source": "مبدا",
+    "level": "سطح",
+    "message": "پیام خطا",
+    "status": "وضعیت",
+    "createdAt": "زمان وقوع",
+    "actions": "عملیات"
+  },
+  "actions": {
+    "viewDetails": "مشاهده جزئیات و استک تریس",
+    "resolve": "علامت‌گذاری به عنوان حل‌شده",
+    "resolved": "حل‌شده"
+  },
+  "modals": {
+    "detailsTitle": "جزئیات فنی خطای ثبت‌شده",
+    "stackTitle": "ردیابی فراخوانی‌ها (Stack Trace):",
+    "contextTitle": "زمینه و داده‌های درخواست (Execution Context):",
+    "resolvedInfo": "این خطا در تاریخ {date} توسط {user} بررسی و بسته شده است.",
+    "sourceLabel": "مبدا:",
+    "timeLabel": "زمان وقوع:",
+    "defaultAdmin": "ادمین"
+  },
+  "toast": {
+    "resolved": "وضعیت خطا با موفقیت به «حل‌شده» تغییر یافت."
+  }
+}

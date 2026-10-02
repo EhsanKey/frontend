@@ -1,0 +1,193 @@
+{
+  "meta": {
+    "title": "ارسال پیام همگانی به کاربران",
+    "description": "سامانه ارسال پیام گروهی و دسته‌ای به دانشجویان و کاربران ربات تلگرام"
+  },
+  "title": "ارسال پیام همگانی به کاربران (Telegram Broadcast)",
+  "description": "ارسال پیام‌های متنی، با قالب‌بندی تلگرام، دکمه‌های شیشه‌ای لینک‌دار، فیلترهای پیشرفته و ضد اسپم",
+  "tabs": {
+    "all": "همه پیام‌ها",
+    "completed": "تکمیل شده",
+    "sending": "در حال ارسال",
+    "failed": "دارای خطا"
+  },
+  "actions": {
+    "newBroadcast": "ارسال پیام جدید",
+    "retryCampaign": "تلاش مجدد برای ارسال",
+    "deleteCampaign": "حذف کمپین",
+    "viewDetails": "مشاهده جزئیات و گزارش ارسال"
+  },
+  "table": {
+    "ariaLabel": "جدول پیام‌های همگانی",
+    "empty": "هیچ پیام همگانی ارسال نشده است.",
+    "allUsers": "همه کاربران ربات",
+    "customFilter": "فیلتر اختصاصی",
+    "customFilterDefault": "فیلتر سفارشی",
+    "selectedUniversity": "دانشگاه منتخب",
+    "campus": "واحد دانشگاهی",
+    "major": "رشته تحصیلی",
+    "dateRange": "محدوده تاریخ",
+    "successfulCount": "{count} موفق",
+    "failedCount": "{count} خطا"
+  },
+  "columns": {
+    "title": "موضوع و متن پیام",
+    "target": "جامعه هدف",
+    "stats": "آمار دریافت",
+    "status": "وضعیت",
+    "createdAt": "زمان ایجاد",
+    "actions": "عملیات"
+  },
+  "statuses": {
+    "completed": "تکمیل شده",
+    "sending": "در حال ارسال",
+    "partially_failed": "ناموفق جزئی",
+    "failed": "کاملاً ناموفق",
+    "draft": "پیش‌نویس"
+  },
+  "toast": {
+    "retryStarted": "تلاش مجدد برای {count} گیرنده ناموفق آغاز شد.",
+    "retryError": "خطا در تلاش مجدد برای ارسال پیام",
+    "deleted": "کمپین پیام همگانی با موفقیت حذف شد.",
+    "deleteError": "خطا در حذف کمپین",
+    "created": "کمپین پیام همگانی با موفقیت ایجاد و ارسال آن آغاز شد.",
+    "createError": "خطا در ثبت و ارسال پیام همگانی"
+  },
+  "deleteModal": {
+    "title": "حذف کمپین پیام همگانی",
+    "prompt": "آیا از حذف کمپین «{title}» اطمینان دارید؟",
+    "warning": "کلیه گزارشات دریافت و لاگ‌های مربوط به این پیام حذف خواهند شد.",
+    "confirm": "حذف قطعی"
+  },
+  "detailModal": {
+    "title": "جزئیات ارسال پیام همگانی",
+    "totalAudience": "کل مخاطبان",
+    "successful": "ارسال موفق",
+    "failed": "ناموفق / خطا",
+    "progress": "وضعیت پیشرفت ارسال",
+    "successPercent": "{percent}٪ موفق",
+    "messagePreview": "پیش‌نمایش پیام ارسالی",
+    "inlineButtons": "دکمه‌های شیشه‌ای ضمیمه",
+    "filtersApplied": "فیلترهای اعمال‌شده",
+    "sentAt": "زمان شروع ارسال",
+    "createdAt": "تاریخ ایجاد: {date}",
+    "retryFailedTitle": "ارسال پیام به {count} کاربر با خطا مواجه شده است.",
+    "retryFailedDesc": "می‌توانید با استفاده از قابلیت تلاش مجدد (Retry)، سیستم را موظف کنید پیام را فقط برای این دسته از کاربران مجدداً ارسال نماید.",
+    "retryFailedAction": "تلاش مجدد برای ناموفق‌ها",
+    "recipientsTitle": "لیست گیرندگان و گزارش وضعیت",
+    "recipientsCount": "نمایش {count} گیرنده",
+    "noRecipients": "اطلاعات تفصیلی گیرنده‌ای ثبت نشده است.",
+    "userCol": "کاربر",
+    "statusCol": "وضعیت",
+    "errorCol": "توضیحات خطا",
+    "attemptsCol": "تلاش",
+    "statusSent": "ارسال شد",
+    "statusFailed": "خطا در ارسال",
+    "statusQueued": "در صف",
+    "attemptTimes": "{count} بار",
+    "firstAttempt": "۱",
+    "telegramUserFallback": "کاربر تلگرام"
+  },
+  "audienceFilter": {
+    "title": "مخاطبان هدف (Audience Targeting)",
+    "description": "جامعه دانشجویانی که این پیام تلگرام را دریافت خواهند کرد مشخص کنید.",
+    "calculating": "محاسبه مخاطبین...",
+    "targetCount": "تعداد مخاطبان هدف:",
+    "usersCount": "{count} نفر",
+    "allUsers": "ارسال به تمام کاربران بات",
+    "advancedFilter": "فیلتر پیشرفته (دانشگاه، دانشکده، رشته، تاریخ عضویت)",
+    "universityPlaceholder": "تمام دانشگاه‌ها یا جستجوی دانشگاه...",
+    "campusPlaceholder": "تمام پردیس‌ها یا جستجوی پردیس...",
+    "majorPlaceholder": "تمام رشته‌ها یا جستجوی رشته...",
+    "joinedAfter": "عضویت پس از تاریخ",
+    "joinedFrom": "عضویت از تاریخ (شروع بازه)",
+    "joinedTo": "عضویت تا تاریخ (پایان بازه)",
+    "sampleRecipients": "نمونه دریافت‌کنندگان:"
+  },
+  "inlineKeyboard": {
+    "title": "دکمه‌های شیشه‌ای لینک‌دار (Inline Keyboard)",
+    "addRow": "افزودن سطر جدید",
+    "empty": "هنوز دکمه شیشه‌ای اضافه نشده است.",
+    "addFirst": "افزودن اولین دکمه شیشه‌ای",
+    "rowHeader": "سطر {row} ({count} دکمه)",
+    "addButtonToRow": "افزودن دکمه به این سطر",
+    "deleteRowAria": "حذف کامل این سطر",
+    "buttonText": "عنوان دکمه",
+    "buttonTextPlaceholder": "مثال: عضویت در کانال",
+    "buttonUrl": "لینک اینترنتی (URL)",
+    "newLink": "لینک جدید",
+    "newButton": "دکمه جدید",
+    "deleteButtonAria": "حذف این دکمه",
+    "optional": "اختیاری",
+    "noButtons": "هنوز دکمه شیشه‌ای اضافه نشده است.",
+    "noButtonsSub": "جهت افزودن دکمه لینک‌دار روی افزودن سطر جدید کلیک کنید.",
+    "rowLabel": "سطر {index}",
+    "addButton": "افزودن دکمه",
+    "buttonLabel": "دکمه {index}",
+    "btnTextPlaceholder": "متن روی دکمه (مثال: کانال تلگرام)"
+  },
+  "editor": {
+    "placeholder": "متن پیام را در اینجا بنویسید یا از دکمه‌های نوار ابزار بالا برای قالب‌بندی تلگرام استفاده کنید...",
+    "bold": "درشت (Bold)",
+    "italic": "مورب (Italic)",
+    "underline": "خط‌زیر (Underline)",
+    "strike": "خط‌خورده (Strikethrough)",
+    "spoiler": "اسپویلر / مخفی (Spoiler)",
+    "link": "درج لینک در متن",
+    "code": "کد درون‌خطی (Code)",
+    "pre": "بلوک کد (Pre)",
+    "quote": "نقل‌قول (Quote)",
+    "clean": "حذف تگ‌های HTML",
+    "cleanAria": "پاک‌سازی فرمت و تگ‌های HTML",
+    "studentNamePlaceholderAria": "درج نام دانشجو در متن پیام",
+    "studentNamePlaceholder": "{نام}",
+    "studentNameTag": "{نام_دانشجو}",
+    "supportedTags": "پشتیبانی از تگ‌های Bold, Italic, Spoiler, Link, Code, Quote",
+    "htmlNotice": "متن پیام با قالب‌بندی تلگرام (HTML)",
+    "linkModal": {
+      "text": "متن لینک",
+      "textPlaceholder": "متن لینک...",
+      "url": "آدرس اینترنتی (URL)",
+      "insert": "درج لینک",
+      "defaultLinkText": "لینک"
+    },
+    "tabs": {
+      "formatted": "ویرایشگر فرمت‌دار",
+      "html": "کد خام HTML تلگرام"
+    },
+    "validationStatus": {
+      "valid": "تگ‌های HTML تلگرام معتبر هستند",
+      "unclosedTag": "تگ <{tag}> به درستی بسته نشده است ({open} باز، {close} بسته).",
+      "bannedTag": "تگ <{tag}> در تلگرام مجاز نیست و پیام فیل خواهد شد."
+    },
+    "charCount": "{current} / {max} کاراکتر"
+  },
+  "preview": {
+    "title": "پیش‌نمایش زنده در تلگرام (Live Telegram Preview)",
+    "simulator": "نمای شبیه‌ساز تلگرام",
+    "botName": "دستیار هوشمند دانشگاهی",
+    "botStatus": "ربات هوشمند (bot)",
+    "placeholder": "پیش‌نمایش پیام تلگرام در این بخش به صورت زنده نمایش داده خواهد شد...",
+    "defaultButtonText": "دکمه شیشه‌ای"
+  },
+  "create": {
+    "metaTitle": "ارسال پیام جدید",
+    "headerTitle": "ارسال پیام همگانی به کاربران تلگرام (Telegram Broadcast)",
+    "headerSubtitle": "طراحی پیام متنی با فرمت تلگرام، دکمه‌های شیشه‌ای لینک‌دار و فیلترهای پیشرفته مخاطبان",
+    "subjectLabel": "موضوع / عنوان کمپین پیام همگانی (جهت ثبت در گزارشات پنل)",
+    "subjectPlaceholder": "مثال: اطلاعیه ثبت‌نام ترم بهمن و راهنمای انتخاب واحد",
+    "submit": "ثبت و آغاز ارسال همگانی",
+    "submitModal": "تایید و ارسال پیام",
+    "confirmSubmit": "تایید و آغاز ارسال همگانی ({count} کاربر)",
+    "antiSpamNotice": "این پیام برای {count} کاربر با رعایت محدودیت‌های ضد اسپم تلگرام ارسال خواهد شد.",
+    "defaultTemplate": "<b>دانشجویان گرامی سلام!</b>\n\nاطلاعیه مهم سامانه دستیار دانشگاهی هم‌اکنون منتشر شد.",
+    "defaultButton": "مشاهده جزئیات در سامانه"
+  },
+  "validation": {
+    "buttonText": "متن دکمه نمی‌تواند خالی باشد",
+    "buttonUrl": "آدرس اینترنتی دکمه معتبر نیست",
+    "titleMin": "موضوع و عنوان کمپین پیام همگانی الزامی است (حداقل ۳ کاراکتر)",
+    "titleMax": "عنوان پیام همگانی نمی‌تواند بیش از ۱۵۰ کاراکتر باشد",
+    "messageMin": "متن پیام تلگرام الزامی است (حداقل ۵ کاراکتر)"
+  }
+}

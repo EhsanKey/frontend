@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "نظرات ثبت‌شده",
+    "description": "مدیریت و پایش نظرات ثبت‌شده در سیستم و کاتالوگ اساتید"
+  },
+  "title": "نظرات ثبت‌شده",
+  "description": "مشاهده، جستجو، فیلتر و ویرایش نظرات فعال و ثبت‌شده در سامانه به همراه مشخصات تدریس و کانال دریافت (دانشجو یا دیتای سیستم).",
+  "banner": {
+    "moderationQueueLink": "ورود به کارتابل نظرات در انتظار بررسی",
+    "pendingCountNotice": "جهت تایید یا رد بازخوردهای جدید ارسالی دانشجویان می‌توانید به کارتابل بررسی مراجعه کنید."
+  },
+  "filters": {
+    "search": "جستجو در متن نظر، نام استاد، درس، دانشگاه، واحد یا رشته...",
+    "university": "دانشگاه",
+    "allUniversities": "همه دانشگاه‌ها",
+    "campus": "واحد / دانشکده",
+    "allCampuses": "همه واحدها",
+    "major": "رشته تحصیلی",
+    "allMajors": "همه رشته‌ها",
+    "professor": "استاد",
+    "allProfessors": "همه اساتید",
+    "course": "درس",
+    "allCourses": "همه دروس",
+    "degreeLevel": "مقطع تحصیلی",
+    "allDegrees": "همه مقاطع",
+    "source": "کانال دریافت",
+    "allSources": "همه کانال‌ها",
+    "sourceStudent": "ثبت توسط دانشجو (تلگرام)",
+    "sourceSystem": "دیتای اولیه / سیستمی",
+    "sourceAdmin": "ثبت دستی مدیر",
+    "sourceTelegramChannel": "کانال تلگرام (خزشگر)",
+    "semester": "نیمسال تحصیلی",
+    "allSemesters": "همه نیمسال‌ها",
+    "clearFilters": "پاکسازی فیلترها"
+  },
+  "table": {
+    "ariaLabel": "جدول نظرات ثبت‌شده",
+    "content": "متن نظر",
+    "professor": "استاد",
+    "course": "درس",
+    "university": "دانشگاه و واحد",
+    "major": "رشته و مقطع",
+    "semester": "نیمسال تحصیلی",
+    "source": "کانال دریافت",
+    "createdAt": "تاریخ ثبت",
+    "actions": "عملیات",
+    "sourceBadgeStudent": "دانشجو",
+    "sourceBadgeSystem": "دیتای سیستم",
+    "sourceBadgeAdmin": "مدیر",
+    "sourceBadgeTelegramChannel": "کانال تلگرام",
+    "studentInfo": "ارسال‌شده توسط: {name}",
+    "telegramUsername": "نام کاربری: @{username}",
+    "systemImported": "داده اولیه وارد شده در سیستم",
+    "adminImported": "ثبت شده توسط ادمین در پنل مدیریت",
+    "emptyMessage": "هیچ نظر ثبت‌شده‌ای یافت نشد.",
+    "viewMore": "مشاهده کامل متن",
+    "close": "بستن"
+  },
+  "degrees": {
+    "associate": "کاردانی",
+    "bachelor": "کارشناسی",
+    "master": "کارشناسی ارشد",
+    "doctorate": "دکتری",
+    "professional_doctorate": "دکتری حرفه‌ای",
+    "unknown": "نامشخص"
+  },
+  "editModal": {
+    "title": "ویرایش نظر ثبت‌شده",
+    "contentLabel": "متن نظر",
+    "contentPlaceholder": "متن نظر را ویرایش کنید...",
+    "currentTeaching": "مشخصات تدریس فعلی",
+    "changeTeaching": "تغییر تدریس متصل به این نظر",
+    "searchTeachingPlaceholder": "جستجوی تدریس دیگر بر اساس استاد، درس یا واحد...",
+    "semesterLabel": "نیمسال تحصیلی",
+    "selectSemesterPlaceholder": "انتخاب نیمسال تحصیلی...",
+    "sourceInfo": "کانال دریافت این نظر",
+    "save": "ذخیره تغییرات",
+    "cancel": "انصراف",
+    "contentRequired": "متن نظر نمی‌تواند خالی باشد."
+  },
+  "deleteModal": {
+    "title": "حذف نظر ثبت‌شده",
+    "confirm": "آیا از حذف این نظر ثبت‌شده اطمینان دارید؟ با حذف نظر، این رکورد به طور دائم از سامانه و کاتالوگ اساتید پاک خواهد شد و کش هوش مصنوعی بروزرسانی می‌شود.",
+    "delete": "حذف قطعی",
+    "cancel": "انصراف"
+  },
+  "toast": {
+    "updated": "نظر ثبت‌شده و تدریس با موفقیت بروزرسانی شد.",
+    "deleted": "نظر با موفقیت حذف شد.",
+    "error": "خطایی در انجام عملیات رخ داد."
+  }
+}

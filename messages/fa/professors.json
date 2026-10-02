@@ -1,0 +1,72 @@
+{
+  "title": "مدیریت اساتید دانشگاه",
+  "description": "فهرست اساتید، تعداد تدریس‌ها، نظرات، منابع و ادغام رکوردهای تکراری ایجادشده توسط بات.",
+  "meta": {
+    "title": "مدیریت اساتید"
+  },
+  "filters": {
+    "search": "جستجوی نام استاد...",
+    "department": "دانشکده"
+  },
+  "table": {
+    "name": "نام استاد",
+    "title": "مرتبه علمی",
+    "department": "دانشکده / گروه آموزشی",
+    "university": "نام دانشگاه",
+    "email": "پست الکترونیکی",
+    "bio": "توضیحات",
+    "createdAt": "تاریخ ثبت",
+    "actions": "عملیات"
+  },
+  "stats": {
+    "teachings": "{count} تدریس",
+    "reviews": "{count} نظر",
+    "resources": "{count} جزوه",
+    "inquiries": "{count} سوال"
+  },
+  "actions": {
+    "create": "ثبت استاد جدید",
+    "edit": "ویرایش استاد",
+    "merge": "ادغام با استاد دیگر",
+    "delete": "حذف"
+  },
+  "modals": {
+    "createTitle": "افزودن استاد جدید",
+    "editTitle": "ویرایش اطلاعات استاد",
+    "deleteTitle": "حذف رکورد استاد",
+    "deleteConfirm": "آیا از حذف این استاد اطمینان دارید؟ در صورت وجود نظرات یا منابع مرتبط، پیشنهاد می‌شود از قابلیت ادغام استفاده کنید.",
+    "mergeTitle": "ادغام اساتید تکراری (Merge)",
+    "mergeDescription": "تمامی تدریس‌ها، نظرات دانشجویان، منابع و پرسش‌های این استاد به استاد مقصد منتقل شده و این رکورد بدون از دست رفتن داده حذف خواهد شد.",
+    "mergeSourceLabel": "استاد مبدا (در حال حذف):",
+    "mergeTargetLabel": "استاد مقصد (رکورد اصلی و معتبر):",
+    "mergeSelectPlaceholder": "انتخاب استاد مقصد...",
+    "mergeConfirmButton": "تایید و اجرای ادغام",
+    "teachingsCount": "{count} تدریس",
+    "reviewsCount": "{count} نظر",
+    "resourcesCount": "{count} جزوه",
+    "inquiriesCount": "{count} سوال"
+  },
+  "fields": {
+    "name": "نام و نام خانوادگی",
+    "namePlaceholder": "مثال: دکتر علیرضا رضایی",
+    "title": "مرتبه علمی",
+    "titlePlaceholder": "مثال: استادیار / دانشیار / استاد تمام",
+    "universityName": "نام دانشگاه",
+    "universityPlaceholder": "مثال: دانشگاه صنعتی شریف",
+    "department": "دانشکده / گروه آموزشی",
+    "departmentPlaceholder": "مثال: مهندسی کامپیوتر",
+    "email": "پست الکترونیکی",
+    "emailPlaceholder": "example@sharif.edu",
+    "bio": "بیوگرافی یا توضیحات تکمیلی",
+    "bioPlaceholder": "توضیحات درباره زمینه‌های پژوهشی و سوابق..."
+  },
+  "validation": {
+    "nameRequired": "نام استاد الزامی است"
+  },
+  "toast": {
+    "created": "استاد جدید با موفقیت ثبت شد.",
+    "updated": "اطلاعات استاد بروزرسانی شد.",
+    "deleted": "رکورد استاد با موفقیت حذف شد.",
+    "merged": "ادغام با موفقیت انجام شد و کلیه سوابق به استاد مقصد منتقل گردید."
+  }
+}
