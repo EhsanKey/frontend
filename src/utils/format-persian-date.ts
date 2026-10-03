@@ -33,6 +33,22 @@ export const formatPersianDate = (value: string): string => {
   }
 };
 
+export const formatPersianDateTime = (value: string): string => {
+  if (!value) {
+    return '';
+  }
+
+  try {
+    const date = new Date(value);
+    if (isNaN(date.getTime())) {
+      return value;
+    }
+    return `${persianDateFormatter.format(date)} ${persianTimeFormatter.format(date)}`;
+  } catch {
+    return value;
+  }
+};
+
 export const formatPersianTime = (value: string): string => {
   if (!value) {
     return '';

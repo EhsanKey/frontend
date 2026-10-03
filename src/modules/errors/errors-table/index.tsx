@@ -5,7 +5,7 @@ import { CheckCircle2, Eye } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { ICON_SIZE_CLASS } from '@/constants';
 import { TableContainer, type TableHeaderOptions } from '@/containers';
-import { formatPersianDate } from '@/utils';
+import { formatPersianDateTime } from '@/utils';
 import type { ErrorLevel, ErrorSource, IErrorLog } from '@/models';
 import type { PaginatedResult } from '@/apis/core/types/api-response';
 
@@ -44,7 +44,7 @@ export const ErrorsTable = ({
     { id: 'level', label: t('level'), className: 'w-28' },
     { id: 'message', label: t('message'), isRowHeader: true },
     { id: 'status', label: t('status'), className: 'w-32' },
-    { id: 'createdAt', label: t('createdAt'), className: 'w-36', cellDir: 'ltr' },
+    { id: 'createdAt', label: t('createdAt'), className: 'w-44', cellDir: 'ltr' },
     { id: 'actions', label: t('actions'), className: 'w-28 text-center' },
   ];
 
@@ -106,8 +106,8 @@ export const ErrorsTable = ({
         );
       case 'createdAt':
         return (
-          <span className="text-caption text-neutral-500">
-            {formatPersianDate(item.createdAt)}
+          <span className="text-caption font-mono text-neutral-600 whitespace-nowrap" dir="ltr">
+            {formatPersianDateTime(item.createdAt)}
           </span>
         );
       case 'actions':
