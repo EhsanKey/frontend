@@ -4,7 +4,7 @@ import { Button, Chip, Modal } from '@heroui/react';
 import { CheckCircle2 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { ICON_SIZE_CLASS } from '@/constants';
-import { formatPersianDate } from '@/utils';
+import { formatPersianDate, formatPersianDateTime } from '@/utils';
 import type { IErrorLog } from '@/models';
 
 interface ErrorDetailsModalProps {
@@ -69,7 +69,10 @@ export const ErrorDetailsModal = ({
                   </span>
                   <span>•</span>
                   <span>
-                    <strong>{t('modals.timeLabel')}</strong> {formatPersianDate(error.createdAt)}
+                    <strong>{t('modals.timeLabel')}</strong>{' '}
+                    <span dir="ltr" className="font-mono">
+                      {formatPersianDateTime(error.createdAt)}
+                    </span>
                   </span>
                 </div>
               </div>
@@ -80,7 +83,7 @@ export const ErrorDetailsModal = ({
                   <CheckCircle2 className="size-4 shrink-0 text-success-600" />
                   <span>
                     {t('modals.resolvedInfo', {
-                      date: error.resolvedAt ? formatPersianDate(error.resolvedAt) : '-',
+                      date: error.resolvedAt ? formatPersianDateTime(error.resolvedAt) : '-',
                       user: error.resolvedBy || t('modals.defaultAdmin'),
                     })}
                   </span>
