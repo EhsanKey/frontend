@@ -1,5 +1,5 @@
-import type { AnalyticsOverviewDto, ProfessorAnalyticsDto } from './_dto';
-import type { IAnalyticsOverview, IProfessorAnalytics } from '@/models';
+import type { ActivityTrendsDto, AnalyticsOverviewDto, ProfessorAnalyticsDto } from './_dto';
+import type { IActivityTrendsResponse, IAnalyticsOverview, IProfessorAnalytics } from '@/models';
 
 export const toAnalyticsOverviewModel = (
   dto: AnalyticsOverviewDto,
@@ -126,10 +126,42 @@ export const toAnalyticsOverviewModel = (
     : undefined,
   activityTrends: (dto.activityTrends ?? []).map((t) => ({
     date: t.date,
+    jalaliDate: t.jalaliDate,
+    label: t.label,
     messages: t.messages ?? 0,
     inquiries: t.inquiries ?? 0,
     submissions: t.submissions ?? 0,
   })),
+  activityTrendsSummary: dto.activityTrendsSummary
+    ? {
+        range: dto.activityTrendsSummary.range ?? '7d',
+        totalMessages: dto.activityTrendsSummary.totalMessages ?? 0,
+        totalInquiries: dto.activityTrendsSummary.totalInquiries ?? 0,
+        totalSubmissions: dto.activityTrendsSummary.totalSubmissions ?? 0,
+        totalVolume: dto.activityTrendsSummary.totalVolume ?? 0,
+      }
+    : undefined,
+});
+
+export const toActivityTrendsModel = (
+  dto: ActivityTrendsDto,
+): IActivityTrendsResponse => ({
+  range: dto.range ?? '7d',
+  points: (dto.points ?? []).map((t) => ({
+    date: t.date,
+    jalaliDate: t.jalaliDate,
+    label: t.label,
+    messages: t.messages ?? 0,
+    inquiries: t.inquiries ?? 0,
+    submissions: t.submissions ?? 0,
+  })),
+  summary: {
+    range: dto.summary?.range ?? dto.range ?? '7d',
+    totalMessages: dto.summary?.totalMessages ?? 0,
+    totalInquiries: dto.summary?.totalInquiries ?? 0,
+    totalSubmissions: dto.summary?.totalSubmissions ?? 0,
+    totalVolume: dto.summary?.totalVolume ?? 0,
+  },
 });
 
 export const toProfessorAnalyticsModel = (

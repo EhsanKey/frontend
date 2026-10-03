@@ -113,10 +113,38 @@ export interface AnalyticsOverviewDto {
   };
   activityTrends?: Array<{
     date: string;
+    jalaliDate?: string;
+    label?: string;
     messages: number;
     inquiries: number;
     submissions: number;
   }>;
+  activityTrendsSummary?: {
+    range: '24h' | '7d' | '30d' | '1y';
+    totalMessages: number;
+    totalInquiries: number;
+    totalSubmissions: number;
+    totalVolume: number;
+  };
+}
+
+export interface ActivityTrendsDto {
+  range: '24h' | '7d' | '30d' | '1y';
+  points: Array<{
+    date: string;
+    jalaliDate?: string;
+    label?: string;
+    messages: number;
+    inquiries: number;
+    submissions: number;
+  }>;
+  summary: {
+    range: '24h' | '7d' | '30d' | '1y';
+    totalMessages: number;
+    totalInquiries: number;
+    totalSubmissions: number;
+    totalVolume: number;
+  };
 }
 
 export interface ProfessorAnalyticsDto {

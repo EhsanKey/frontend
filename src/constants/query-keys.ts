@@ -7,6 +7,7 @@ export const QUERY_KEYS = {
   },
   analytics: {
     overview: ['analytics', 'overview'] as const,
+    activityTrends: (range?: string) => ['analytics', 'activityTrends', range] as const,
     professors: (limit?: number) => ['analytics', 'professors', limit] as const,
   },
   reviews: {

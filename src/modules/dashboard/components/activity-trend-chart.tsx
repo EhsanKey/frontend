@@ -1,54 +1,153 @@
 'use client';
 
 import React, { useId, useState } from 'react';
-import { Card, Chip } from '@heroui/react';
-import { Activity, MessageSquare, HelpCircle, FileCheck2, TrendingUp } from 'lucide-react';
+import { Card, Spinner } from '@heroui/react';
+import {
+  Activity,
+  Calendar,
+  FileCheck2,
+  HelpCircle,
+  MessageSquare,
+  TrendingUp,
+} from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import type { IActivityTrendPoint } from '@/models';
+import { clientAnalyticsServices } from '@/apis/services/analytics/client';
+import { QUERY_KEYS } from '@/constants';
+import { useGetRequest } from '@/hooks';
+import type { AnalyticsTimeRange, IActivityTrendPoint } from '@/models';
 
 interface ActivityTrendChartProps {
   data?: IActivityTrendPoint[];
   trends?: IActivityTrendPoint[];
+  initialRange?: AnalyticsTimeRange;
+  onRangeChange?: (range: AnalyticsTimeRange) => void;
 }
 
 type MetricTab = 'all' | 'messages' | 'inquiries' | 'submissions';
 
-export const ActivityTrendChart = ({ data, trends }: ActivityTrendChartProps) => {
+const TIME_RANGES: AnalyticsTimeRange[] = ['24h', '7d', '30d', '1y'];
+
+export const ActivityTrendChart = ({
+  data,
+  trends,
+  initialRange = '7d',
+  onRangeChange,
+}: ActivityTrendChartProps) => {
   const t = useTranslations('dashboard');
+  const [activeRange, setActiveRange] = useState<AnalyticsTimeRange>(initialRange);
   const [activeTab, setActiveTab] = useState<MetricTab>('all');
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const idPrefix = useId();
 
+  const handleRangeChange = (range: AnalyticsTimeRange) => {
+    setActiveRange(range);
+    setHoveredIndex(null);
+    onRangeChange?.(range);
+  };
+
+  const initialSeedPoints = data ?? trends;
+
+  const { data: trendData, isLoading, isFetching } = useGetRequest({
+    queryKey: QUERY_KEYS.analytics.activityTrends(activeRange),
+    requestFn: () => clientAnalyticsServices.getActivityTrends({ range: activeRange }),
+    enabled: activeRange !== '7d' || !initialSeedPoints || initialSeedPoints.length === 0,
+  });
+
   const formatNumber = (num: number): string =>
     new Intl.NumberFormat('fa-IR').format(num);
 
-  const formatPersianDate = (dateStr: string): string => {
+  const toPersianDigits = (str: string): string => {
+    return str.replace(/\d/g, (d) => '۰۱۲۳۴۵۶۷۸۹'[parseInt(d, 10)] ?? d);
+  };
+
+  const formatPointLabel = (point: IActivityTrendPoint): string => {
+    if (point.label) {
+      return toPersianDigits(point.label);
+    }
     try {
-      const date = new Date(dateStr);
-      return new Intl.DateTimeFormat('fa-IR', {
-        month: 'short',
-        day: 'numeric',
-      }).format(date);
+      const date = new Date(point.date);
+      if (!isNaN(date.getTime())) {
+        if (activeRange === '24h') {
+          return new Intl.DateTimeFormat('fa-IR', {
+            timeZone: 'Asia/Tehran',
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: false,
+          }).format(date);
+        }
+        if (activeRange === '1y') {
+          return new Intl.DateTimeFormat('fa-IR', {
+            timeZone: 'Asia/Tehran',
+            month: 'long',
+            year: 'numeric',
+          }).format(date);
+        }
+        return new Intl.DateTimeFormat('fa-IR', {
+          timeZone: 'Asia/Tehran',
+          month: 'short',
+          day: 'numeric',
+        }).format(date);
+      }
     } catch {
-      return dateStr;
+      // ignore
+    }
+    return toPersianDigits(point.jalaliDate ?? point.date);
+  };
+
+  const activePoints =
+    trendData?.points ?? (activeRange === '7d' ? initialSeedPoints : undefined);
+
+  const fallbackPoints: IActivityTrendPoint[] = [
+    { date: '1405/07/05', jalaliDate: '1405/07/05', label: '۵ مهر', messages: 120, inquiries: 30, submissions: 10 },
+    { date: '1405/07/06', jalaliDate: '1405/07/06', label: '۶ مهر', messages: 150, inquiries: 45, submissions: 15 },
+    { date: '1405/07/07', jalaliDate: '1405/07/07', label: '۷ مهر', messages: 240, inquiries: 50, submissions: 18 },
+    { date: '1405/07/08', jalaliDate: '1405/07/08', label: '۸ مهر', messages: 210, inquiries: 48, submissions: 14 },
+    { date: '1405/07/09', jalaliDate: '1405/07/09', label: '۹ مهر', messages: 290, inquiries: 65, submissions: 22 },
+    { date: '1405/07/10', jalaliDate: '1405/07/10', label: '۱۰ مهر', messages: 340, inquiries: 78, submissions: 30 },
+    { date: '1405/07/11', jalaliDate: '1405/07/11', label: '۱۱ مهر', messages: 390, inquiries: 85, submissions: 35 },
+  ];
+
+  const points = activePoints && activePoints.length > 0 ? activePoints : fallbackPoints;
+
+  const totalMessages =
+    trendData?.summary?.totalMessages ??
+    points.reduce((acc, p) => acc + p.messages, 0);
+  const totalInquiries =
+    trendData?.summary?.totalInquiries ??
+    points.reduce((acc, p) => acc + p.inquiries, 0);
+  const totalSubmissions =
+    trendData?.summary?.totalSubmissions ??
+    points.reduce((acc, p) => acc + p.submissions, 0);
+  const totalVolume =
+    trendData?.summary?.totalVolume ??
+    totalMessages + totalInquiries + totalSubmissions;
+
+  const getVolumeLabel = (): string => {
+    switch (activeRange) {
+      case '24h':
+        return t('charts.totalVolume24h');
+      case '30d':
+        return t('charts.totalVolume30d');
+      case '1y':
+        return t('charts.totalVolume1y');
+      case '7d':
+      default:
+        return t('charts.totalVolume7d');
     }
   };
 
-  const rawData = data ?? trends ?? [];
-  const points = rawData.length > 0 ? rawData : [
-    { date: '2026-09-25', messages: 120, inquiries: 30, submissions: 10 },
-    { date: '2026-09-26', messages: 150, inquiries: 45, submissions: 15 },
-    { date: '2026-09-27', messages: 240, inquiries: 50, submissions: 18 },
-    { date: '2026-09-28', messages: 210, inquiries: 48, submissions: 14 },
-    { date: '2026-09-29', messages: 290, inquiries: 65, submissions: 22 },
-    { date: '2026-09-30', messages: 340, inquiries: 78, submissions: 30 },
-    { date: '2026-10-01', messages: 390, inquiries: 85, submissions: 35 },
-  ];
-
-  const totalMessages = points.reduce((acc, p) => acc + p.messages, 0);
-  const totalInquiries = points.reduce((acc, p) => acc + p.inquiries, 0);
-  const totalSubmissions = points.reduce((acc, p) => acc + p.submissions, 0);
-  const totalVolume = totalMessages + totalInquiries + totalSubmissions;
+  const getRangeLabel = (r: AnalyticsTimeRange): string => {
+    switch (r) {
+      case '24h':
+        return t('charts.range24h');
+      case '7d':
+        return t('charts.range7d');
+      case '30d':
+        return t('charts.range30d');
+      case '1y':
+        return t('charts.range1y');
+    }
+  };
 
   // Chart dimensions & scaling
   const width = 760;
@@ -115,28 +214,59 @@ export const ActivityTrendChart = ({ data, trends }: ActivityTrendChartProps) =>
 
   const activePoint = hoveredIndex !== null ? points[hoveredIndex] : null;
 
+  const shouldShowTick = (index: number, total: number): boolean => {
+    if (total <= 8) return true;
+    if (total <= 14) return index % 2 === 0 || index === total - 1;
+    if (total <= 25) return index % 4 === 0 || index === total - 1;
+    return index % 5 === 0 || index === total - 1;
+  };
+
   return (
     <Card className="rounded-2xl border border-neutral-200/80 bg-white p-6 shadow-2xs">
       {/* Header and Controls */}
-      <div className="flex flex-col gap-4 border-b border-neutral-100 pb-5 lg:flex-row lg:items-center lg:justify-between">
-        <div>
-          <div className="flex items-center gap-2">
+      <div className="flex flex-col gap-4 border-b border-neutral-100 pb-5">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex items-center gap-2.5">
             <div className="rounded-xl bg-primary-50 p-2 text-primary-600">
               <Activity className="size-5" />
             </div>
             <div>
-              <h3 className="text-title font-bold text-neutral-900">
-                {t('charts.activityTitle')}
-              </h3>
+              <div className="flex items-center gap-2">
+                <h3 className="text-title font-bold text-neutral-900">
+                  {t('charts.activityTitle')}
+                </h3>
+                {isFetching && (
+                  <Spinner size="sm" color="current" className="size-4 text-primary-600" />
+                )}
+              </div>
               <p className="mt-0.5 text-caption text-neutral-500">
                 {t('charts.activitySubtitle')}
               </p>
             </div>
           </div>
+
+          {/* Time Range Selector */}
+          <div className="flex items-center gap-1 rounded-xl bg-neutral-100/90 p-1 self-start sm:self-auto border border-neutral-200/50">
+            <Calendar className="size-3.5 text-neutral-400 ms-1.5 me-0.5 hidden xs:block" />
+            {TIME_RANGES.map((rangeOption) => (
+              <button
+                key={rangeOption}
+                type="button"
+                onClick={() => handleRangeChange(rangeOption)}
+                className={`rounded-lg px-2.5 py-1 text-caption font-semibold transition-all cursor-pointer ${
+                  activeRange === rangeOption
+                    ? 'bg-white text-neutral-900 shadow-2xs font-bold'
+                    : 'text-neutral-500 hover:text-neutral-900'
+                }`}
+              >
+                {getRangeLabel(rangeOption)}
+              </button>
+            ))}
+          </div>
         </div>
 
-        {/* Tab Filters */}
-        <div className="flex flex-wrap items-center gap-1.5 rounded-xl bg-neutral-100/90 p-1">
+        {/* Tab Filters for Metrics */}
+        <div className="flex flex-wrap items-center gap-1.5 rounded-xl bg-neutral-100/90 p-1 self-start">
           <button
             type="button"
             onClick={() => setActiveTab('all')}
@@ -191,7 +321,9 @@ export const ActivityTrendChart = ({ data, trends }: ActivityTrendChartProps) =>
       <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
         <div className="rounded-xl bg-blue-50/60 p-3 border border-blue-100/60">
           <div className="flex items-center justify-between">
-            <span className="text-caption font-medium text-blue-700">{t('charts.legendMessages')}</span>
+            <span className="text-caption font-medium text-blue-700">
+              {t('charts.legendMessages')}
+            </span>
             <MessageSquare className="size-3.5 text-blue-500" />
           </div>
           <p className="mt-1 text-h3 font-bold text-blue-900">{formatNumber(totalMessages)}</p>
@@ -199,7 +331,9 @@ export const ActivityTrendChart = ({ data, trends }: ActivityTrendChartProps) =>
 
         <div className="rounded-xl bg-amber-50/60 p-3 border border-amber-100/60">
           <div className="flex items-center justify-between">
-            <span className="text-caption font-medium text-amber-700">{t('charts.legendInquiries')}</span>
+            <span className="text-caption font-medium text-amber-700">
+              {t('charts.legendInquiries')}
+            </span>
             <HelpCircle className="size-3.5 text-amber-500" />
           </div>
           <p className="mt-1 text-h3 font-bold text-amber-900">{formatNumber(totalInquiries)}</p>
@@ -207,15 +341,21 @@ export const ActivityTrendChart = ({ data, trends }: ActivityTrendChartProps) =>
 
         <div className="rounded-xl bg-emerald-50/60 p-3 border border-emerald-100/60">
           <div className="flex items-center justify-between">
-            <span className="text-caption font-medium text-emerald-700">{t('charts.legendSubmissions')}</span>
+            <span className="text-caption font-medium text-emerald-700">
+              {t('charts.legendSubmissions')}
+            </span>
             <FileCheck2 className="size-3.5 text-emerald-500" />
           </div>
-          <p className="mt-1 text-h3 font-bold text-emerald-900">{formatNumber(totalSubmissions)}</p>
+          <p className="mt-1 text-h3 font-bold text-emerald-900">
+            {formatNumber(totalSubmissions)}
+          </p>
         </div>
 
         <div className="rounded-xl bg-primary-50/60 p-3 border border-primary-100/60">
           <div className="flex items-center justify-between">
-            <span className="text-caption font-medium text-primary-700">کل تعاملات ۷ روز</span>
+            <span className="text-caption font-medium text-primary-700">
+              {getVolumeLabel()}
+            </span>
             <TrendingUp className="size-3.5 text-primary-500" />
           </div>
           <p className="mt-1 text-h3 font-bold text-primary-900">{formatNumber(totalVolume)}</p>
@@ -223,7 +363,11 @@ export const ActivityTrendChart = ({ data, trends }: ActivityTrendChartProps) =>
       </div>
 
       {/* SVG Chart Container */}
-      <div className="relative mt-6 select-none">
+      <div
+        className={`relative mt-6 select-none transition-opacity duration-300 ${
+          isLoading ? 'opacity-50' : 'opacity-100'
+        }`}
+      >
         <svg
           viewBox={`0 0 ${width} ${height}`}
           className="w-full h-auto overflow-visible"
@@ -329,6 +473,7 @@ export const ActivityTrendChart = ({ data, trends }: ActivityTrendChartProps) =>
 
           {/* X Axis labels */}
           {points.map((p, i) => {
+            if (!shouldShowTick(i, points.length)) return null;
             const x = getX(i);
             const isHovered = hoveredIndex === i;
             return (
@@ -341,7 +486,7 @@ export const ActivityTrendChart = ({ data, trends }: ActivityTrendChartProps) =>
                     isHovered ? 'fill-primary-600 font-bold' : 'fill-neutral-500'
                   }`}
                 >
-                  {formatPersianDate(p.date)}
+                  {formatPointLabel(p)}
                 </text>
               </g>
             );
@@ -429,8 +574,10 @@ export const ActivityTrendChart = ({ data, trends }: ActivityTrendChartProps) =>
             }}
           >
             <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-1 text-caption font-semibold text-neutral-300">
-              <span>{formatPersianDate(activePoint.date)}</span>
-              <span className="font-mono text-[10px] text-neutral-400">{activePoint.date}</span>
+              <span>{formatPointLabel(activePoint)}</span>
+              <span className="font-mono text-[10px] text-neutral-400">
+                {toPersianDigits(activePoint.jalaliDate ?? activePoint.date)}
+              </span>
             </div>
 
             <div className="flex flex-col gap-1 text-caption">
@@ -438,7 +585,7 @@ export const ActivityTrendChart = ({ data, trends }: ActivityTrendChartProps) =>
                 <div className="flex items-center justify-between gap-3 text-blue-300">
                   <span className="flex items-center gap-1.5">
                     <span className="size-2 rounded-full bg-blue-400" />
-                    پیام‌های بات:
+                    {t('charts.legendMessages')}:
                   </span>
                   <span className="font-bold">{formatNumber(activePoint.messages)}</span>
                 </div>
@@ -448,7 +595,7 @@ export const ActivityTrendChart = ({ data, trends }: ActivityTrendChartProps) =>
                 <div className="flex items-center justify-between gap-3 text-amber-300">
                   <span className="flex items-center gap-1.5">
                     <span className="size-2 rounded-full bg-amber-400" />
-                    استعلام‌ها:
+                    {t('charts.legendInquiries')}:
                   </span>
                   <span className="font-bold">{formatNumber(activePoint.inquiries)}</span>
                 </div>
@@ -458,7 +605,7 @@ export const ActivityTrendChart = ({ data, trends }: ActivityTrendChartProps) =>
                 <div className="flex items-center justify-between gap-3 text-emerald-300">
                   <span className="flex items-center gap-1.5">
                     <span className="size-2 rounded-full bg-emerald-400" />
-                    نظرات و منابع:
+                    {t('charts.legendSubmissions')}:
                   </span>
                   <span className="font-bold">{formatNumber(activePoint.submissions)}</span>
                 </div>
@@ -470,3 +617,5 @@ export const ActivityTrendChart = ({ data, trends }: ActivityTrendChartProps) =>
     </Card>
   );
 };
+
+export default ActivityTrendChart;

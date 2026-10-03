@@ -120,11 +120,29 @@ export interface IChannelUsageAnalytics {
   primaryChannel: 'group' | 'private';
 }
 
+export type AnalyticsTimeRange = '24h' | '7d' | '30d' | '1y';
+
 export interface IActivityTrendPoint {
   date: string;
+  jalaliDate?: string;
+  label?: string;
   messages: number;
   inquiries: number;
   submissions: number;
+}
+
+export interface IActivityTrendsSummary {
+  range: AnalyticsTimeRange;
+  totalMessages: number;
+  totalInquiries: number;
+  totalSubmissions: number;
+  totalVolume: number;
+}
+
+export interface IActivityTrendsResponse {
+  range: AnalyticsTimeRange;
+  points: IActivityTrendPoint[];
+  summary: IActivityTrendsSummary;
 }
 
 export interface IAnalyticsOverview {
@@ -137,6 +155,7 @@ export interface IAnalyticsOverview {
   aiModels?: IAIModelsAnalytics;
   channelUsage?: IChannelUsageAnalytics;
   activityTrends?: IActivityTrendPoint[];
+  activityTrendsSummary?: IActivityTrendsSummary;
 }
 
 export interface ITopInquiredProfessor {

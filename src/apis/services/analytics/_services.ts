@@ -1,18 +1,31 @@
 import { ANALYTICS_ENDPOINTS } from './_endpoints';
 import {
+  toActivityTrendsModel,
   toAnalyticsOverviewModel,
   toProfessorAnalyticsModel,
 } from './_mappers';
-import type { AnalyticsOverviewDto, ProfessorAnalyticsDto } from './_dto';
-import type { GetProfessorAnalyticsParams } from './_types';
+import type { ActivityTrendsDto, AnalyticsOverviewDto, ProfessorAnalyticsDto } from './_dto';
+import type {
+  GetActivityTrendsParams,
+  GetOverviewParams,
+  GetProfessorAnalyticsParams,
+} from './_types';
 import type { ApiRequestFunction } from '@/apis/core/types/api-request.types';
-import type { IAnalyticsOverview, IProfessorAnalytics } from '@/models';
+import type {
+  IActivityTrendsResponse,
+  IAnalyticsOverview,
+  IProfessorAnalytics,
+} from '@/models';
 
 export function createAnalyticsServices(request: ApiRequestFunction) {
-  async function getOverview(signal?: AbortSignal): Promise<IAnalyticsOverview> {
+  async function getOverview(
+    params?: GetOverviewParams,
+    signal?: AbortSignal,
+  ): Promise<IAnalyticsOverview> {
     const dto = await request<AnalyticsOverviewDto>({
       url: ANALYTICS_ENDPOINTS.overview,
       method: 'GET',
+      params,
       signal,
       meta: {
         auth: 'required',
@@ -20,6 +33,23 @@ export function createAnalyticsServices(request: ApiRequestFunction) {
     });
 
     return toAnalyticsOverviewModel(dto);
+  }
+
+  async function getActivityTrends(
+    params?: GetActivityTrendsParams,
+    signal?: AbortSignal,
+  ): Promise<IActivityTrendsResponse> {
+    const dto = await request<ActivityTrendsDto>({
+      url: ANALYTICS_ENDPOINTS.activityTrends,
+      method: 'GET',
+      params,
+      signal,
+      meta: {
+        auth: 'required',
+      },
+    });
+
+    return toActivityTrendsModel(dto);
   }
 
   async function getProfessorAnalytics(
@@ -41,6 +71,7 @@ export function createAnalyticsServices(request: ApiRequestFunction) {
 
   return {
     getOverview,
+    getActivityTrends,
     getProfessorAnalytics,
   };
 }

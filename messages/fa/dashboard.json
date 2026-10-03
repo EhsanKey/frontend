@@ -60,17 +60,25 @@
     "checkErrors": "مشاهده لاگ خطاهای هوش مصنوعی"
   },
   "charts": {
-    "activityTitle": "روند فعالیت و ترافیک سامانه (۷ روز اخیر)",
-    "activitySubtitle": "پایش روزانه پیام‌های دریافتی، پرسش‌های دانشجویان و محتوای ارسالی",
+    "activityTitle": "روند فعالیت و ترافیک سامانه",
+    "activitySubtitle": "پایش مقایسه‌ای پیام‌های دریافتی، پرسش‌های دانشجویان و محتوای ارسالی",
+    "range24h": "۲۴ ساعت",
+    "range7d": "۷ روز",
+    "range30d": "۳۰ روز",
+    "range1y": "۱ سال",
     "tabAll": "همه شاخص‌ها",
     "tabMessages": "پیام‌های تلگرام",
-    "tabInquiries": "استعلام‌های اساتید",
-    "tabSubmissions": "نظرات و منابع",
+    "tabInquiries": "استعلام‌های دانشجو",
+    "tabSubmissions": "بازخورد و منبع",
     "legendMessages": "پیام‌های تلگرام",
     "legendInquiries": "استعلام‌های دانشجو",
     "legendSubmissions": "بازخورد و منبع",
-    "tooltipDate": "تاریخ: {date}",
-    "totalVolume": "مجموع حجم تعاملات ۷ روزه: {count}"
+    "totalVolume24h": "کل تعاملات ۲۴ ساعت",
+    "totalVolume7d": "کل تعاملات ۷ روز",
+    "totalVolume30d": "کل تعاملات ۳۰ روز",
+    "totalVolume1y": "کل تعاملات ۱ سال",
+    "tooltipDate": "زمان: {date}",
+    "totalVolume": "مجموع حجم تعاملات: {count}"
   },
   "telegram": {
     "title": "جامعه دانشجویی و گروه‌های تلگرام",
